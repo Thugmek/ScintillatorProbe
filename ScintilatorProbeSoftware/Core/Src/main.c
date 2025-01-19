@@ -50,7 +50,14 @@ typedef struct Gcode {
 
 /* Private macro -------------------------------------------------------------*/
 /* USER CODE BEGIN PM */
-#define ADC_TO_VOLTAGE 0.9588068182
+#define ADC_TO_VOLTAGE 0.7510653409
+#define MAX_PWM 1200
+
+#define PID_P 0.0
+#define PID_I 0.0000006
+#define PID_D 555.55
+
+#define MAX_INTEGRATOR (1/PID_I)
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
@@ -61,6 +68,11 @@ TIM_HandleTypeDef htim1;
 /* USER CODE BEGIN PV */
 int pwm_value = 0;
 long report_decimator_counter = 0;
+
+float target_voltage = 0.0;
+
+float pid_last_err = 0.0;
+float pid_integrator = 0.0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -433,7 +445,11 @@ void USB_CDC_RxHandler(uint8_t* Buf, uint32_t Len)
 				}
 				break;
 			case 2:
-				sprintf(TxBuffer, "Called P2\n");
+				if(get_gcode_arg(&gcode,'V', &target_voltage)){
+					sprintf(TxBuffer, "Called P1 - set voltage to %4.2f\n", target_voltage);
+				}else{
+					sprintf(TxBuffer, "Called P1 - actual voltage: %4.2f\n",target_voltage);
+				}
 				break;
 		}
 	}
@@ -442,15 +458,31 @@ void USB_CDC_RxHandler(uint8_t* Buf, uint32_t Len)
     CDC_Transmit_FS((uint8_t*)TxBuffer, l);
 }
 
+//Sample rate 55_555kHz
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
 {
     // Read & Update The ADC Result
-	float voltage = HAL_ADC_GetValue(&hadc1)*ADC_TO_VOLTAGE;
+	uint32_t raw_adc = HAL_ADC_GetValue(&hadc1);
+
+	float voltage = raw_adc*ADC_TO_VOLTAGE;
+
+	float err = target_voltage-voltage;
+	float delta_err = err-pid_last_err;
+	pid_last_err = err;
+	pid_integrator += err;
+	if(pid_integrator > 1666666.0) pid_integrator = 1666666.0;
+	if(pid_integrator < -1666666.0) pid_integrator = 1666666.0;
+
+	float pid_output = (err*PID_P) + (pid_integrator*PID_I) + (delta_err*PID_D);
+	if(pid_output > 1.0) pid_output = 1.0;
+	if(pid_output < 0.0) pid_output = 0.0;
+
+	TIM1->CCR1 = 1400-(int)(pid_output*MAX_PWM);
 
 	if(report_decimator_counter > 15000){
 		report_decimator_counter = 0;
 		char TxBuffer[1024];
-		sprintf(TxBuffer, "Voltage: %5.2fV\n", voltage);
+		sprintf(TxBuffer, "Voltage: %04.2fV, PWM: %04ld, PID_O: %01.4f, err: %f, d_err: %f, int: %f\n", voltage, 1400-TIM1->CCR1, pid_output, err, delta_err, pid_integrator);
 		uint32_t l = strlen(TxBuffer);
 		CDC_Transmit_FS((uint8_t*)TxBuffer, l);
 	}
