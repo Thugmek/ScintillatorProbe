@@ -111,7 +111,7 @@ int main(void)
   MX_TIM1_Init();
   MX_ADC1_Init();
   /* USER CODE BEGIN 2 */
-  TIM1->CCR1 = pwm_value;
+  TIM1->CCR1 = 1400;
   HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
   HAL_ADC_Start_IT(&hadc1);
   /* USER CODE END 2 */
@@ -245,7 +245,7 @@ static void MX_TIM1_Init(void)
   htim1.Instance = TIM1;
   htim1.Init.Prescaler = 0;
   htim1.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim1.Init.Period = 3600;
+  htim1.Init.Period = 1400;
   htim1.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim1.Init.RepetitionCounter = 0;
   htim1.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_ENABLE;
@@ -426,10 +426,10 @@ void USB_CDC_RxHandler(uint8_t* Buf, uint32_t Len)
 			case 1:
 				float val = 0;
 				if(get_gcode_arg(&gcode,'A', &val)){
-					TIM1->CCR1 = (int)val;
-					sprintf(TxBuffer, "Called P1 - set pwm to %ld\n", TIM1->CCR1);
+					TIM1->CCR1 = 1400-(int)val;
+					sprintf(TxBuffer, "Called P1 - set pwm to %ld\n", 1400-TIM1->CCR1);
 				}else{
-					sprintf(TxBuffer, "Called P1 - actual pwm: %ld\n",TIM1->CCR1);
+					sprintf(TxBuffer, "Called P1 - actual pwm: %ld\n",1400-TIM1->CCR1);
 				}
 				break;
 			case 2:
