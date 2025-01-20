@@ -1,2 +1,32 @@
 ControllApp/__pycache__/*
 ControllApp/.idea/*
+
+#===KiCad====
+# Temporary files
+ScintillatorProbeHardware/*.000
+ScintillatorProbeHardware/*.bak
+ScintillatorProbeHardware/*.bck
+ScintillatorProbeHardware/*.kicad_pcb-bak
+ScintillatorProbeHardware/*.kicad_sch-bak
+ScintillatorProbeHardware/*-backups
+ScintillatorProbeHardware/*.kicad_prl
+ScintillatorProbeHardware/*.sch-bak
+ScintillatorProbeHardware/*~
+ScintillatorProbeHardware/_autosave-*
+ScintillatorProbeHardware/*.tmp
+ScintillatorProbeHardware/*-save.pro
+ScintillatorProbeHardware/*-save.kicad_pcb
+ScintillatorProbeHardware/fp-info-cache
+ScintillatorProbeHardware/~*.lck
+ScintillatorProbeHardware/\#auto_saved_files#
+
+# Netlist files (exported from Eeschema)
+ScintillatorProbeHardware/*.net
+
+# Autorouter files (exported from Pcbnew)
+ScintillatorProbeHardware/*.dsn
+ScintillatorProbeHardware/*.ses
+
+# Exported BOM files
+ScintillatorProbeHardware/*.xml
+ScintillatorProbeHardware/*.csv
