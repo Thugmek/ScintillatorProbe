@@ -1,6 +1,7 @@
 import threading
 
 import gi
+from serial.rfc2217 import Serial
 
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk, GLib
@@ -75,9 +76,30 @@ class PIDPage(Gtk.Box):
         hbox.pack_start(spin_button, False, True, 0)
         listbox.add(row)
 
+        row = Gtk.ListBoxRow()
+        hbox = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=50)
+        row.add(hbox)
+        label1 = Gtk.Label("Manual PWM", xalign=0)
+        hbox.pack_start(label1, True, True, 0)
+        self.spin_button = Gtk.SpinButton()
+        self.spin_button.props.valign = Gtk.Align.CENTER
+        self.spin_button.set_range(0, 1200)
+        self.spin_button.set_increments(10, 100)
+        self.spin_button.set_digits(0)
+        hbox.pack_start(self.spin_button, False, True, 0)
+        listbox.add(row)
+
+        row = Gtk.ListBoxRow()
+        hbox = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=50)
+        row.add(hbox)
+        button = Gtk.Button(label="Send")
+        button.connect("clicked", self.send_params)
+        hbox.pack_start(button, True, True, 0)
+        listbox.add(row)
+
         fig = Figure(figsize=(5, 4), dpi=100)
         self.ax = fig.add_subplot()
-        self.ax.set_ylim([0,2000])
+        self.ax.set_ylim([0,3200])
         self.voltages = [0] * 200
         self.voltages_min = [0] * 200
         self.voltages_max = [0] * 200
@@ -100,6 +122,9 @@ class PIDPage(Gtk.Box):
         SerialHandler.add_callback(SerialCallback(b"Temperature Report, data size", self.serial_callback))
 
         GLib.timeout_add(300,self.redraw_chart)
+
+    def send_params(self, button):
+        SerialHandler.send_command(f"P1 A{self.spin_button.get_value()}")
 
     def redraw_chart(self):
         with self.data_lock:

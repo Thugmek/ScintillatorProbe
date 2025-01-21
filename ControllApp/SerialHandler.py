@@ -8,9 +8,10 @@ class SerialCallback:
 
 class _SerialHandler:
     def __init__(self):
-        self.device = "/dev/pts/9"
+        self.device = "/dev/ttyACM0"
         self.callbacks = []
         self.work_thread = threading.Thread(target=self.work_loop)
+        self.serial = serial.Serial(port=self.device)
 
     def set_device(self, device):
         self.device = device
@@ -21,16 +22,18 @@ class _SerialHandler:
     def remove_callback(self, callback: SerialCallback):
         self.callbacks.remove(callback)
 
+    def send_command(self, command:str):
+        self.serial.write(command.encode())
+
     def start_handler(self):
         self.work_thread.start()
 
     def work_loop(self):
-        ser = serial.Serial(port=self.device)
         while True:
-            line = ser.readline()
+            line = self.serial.readline()
             for cb in self.callbacks:
                 if line.startswith(cb.command):
-                    cb.callback(line, ser)
+                    cb.callback(line, self.serial)
                     break
 
 SerialHandler = _SerialHandler()

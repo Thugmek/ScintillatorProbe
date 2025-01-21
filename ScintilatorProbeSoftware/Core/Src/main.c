@@ -59,7 +59,7 @@ typedef struct Gcode {
 
 #define MAX_INTEGRATOR (1/PID_I)
 #define REPORT_CHUNK 100
-#define REPORT_DECIMATION 100
+#define REPORT_DECIMATION 10
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
@@ -472,7 +472,7 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
 
 	float voltage = raw_adc*ADC_TO_VOLTAGE;
 
-	float err = target_voltage-voltage;
+	/*float err = target_voltage-voltage;
 	float delta_err = err-pid_last_err;
 	pid_last_err = err;
 	pid_integrator += err;
@@ -484,11 +484,11 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
 	if(pid_output < 0.0) pid_output = 0.0;
 
 	uint16_t pwm_output = (uint16_t)(pid_output*MAX_PWM);
-	TIM1->CCR1 = 1400-pwm_output;
+	TIM1->CCR1 = 1400-pwm_output;*/
 
 	if(decimation_index >= REPORT_DECIMATION){
 		voltage_history[history_index] = (uint16_t)voltage;
-		pwm_history[history_index] = pwm_output;
+		pwm_history[history_index] = 1400 - TIM1->CCR1;
 		history_index++;
 		decimation_index = 0;
 	}
