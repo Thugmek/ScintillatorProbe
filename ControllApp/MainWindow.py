@@ -3,23 +3,19 @@ import gi
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 
+from PIDPage import PIDPage
+
 
 class MainWindow(Gtk.Window):
     def __init__(self):
         super().__init__(title="GammaScintillator")
         self.connect("destroy", Gtk.main_quit)
-
-        self.button = Gtk.Button(label="Click Here")
-        self.button.connect("clicked", self.on_button_clicked)
-        #self.add(self.button)
+        self.set_size_request(600,400)
 
         self.notebook = Gtk.Notebook()
         self.add(self.notebook)
 
-        self.page1 = Gtk.Box()
-        self.page1.set_border_width(10)
-        self.page1.add(Gtk.Label(label="Default Page!"))
-        self.notebook.append_page(self.page1, Gtk.Label(label="Plain Title"))
+        self.notebook.append_page(PIDPage(), Gtk.Label(label="PID"))
 
         self.page2 = Gtk.Box()
         self.page2.set_border_width(10)
