@@ -53,11 +53,13 @@ typedef struct Gcode {
 #define ADC_TO_VOLTAGE 0.7510653409
 #define MAX_PWM 1200
 
-#define PID_P 0.0
-#define PID_I 0.0000006
-#define PID_D 555.55
+#define PID_P 100
+#define PID_I 0.0
+#define PID_D 0.0
 
 #define MAX_INTEGRATOR (1/PID_I)
+#define REPORT_CHUNK 100
+#define REPORT_DECIMATION 100
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
@@ -67,12 +69,16 @@ TIM_HandleTypeDef htim1;
 
 /* USER CODE BEGIN PV */
 int pwm_value = 0;
-long report_decimator_counter = 0;
 
 float target_voltage = 0.0;
 
 float pid_last_err = 0.0;
 float pid_integrator = 0.0;
+
+uint16_t voltage_history[REPORT_CHUNK];
+uint16_t pwm_history[REPORT_CHUNK];
+uint16_t history_index = 0;
+uint16_t decimation_index = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -477,16 +483,27 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
 	if(pid_output > 1.0) pid_output = 1.0;
 	if(pid_output < 0.0) pid_output = 0.0;
 
-	TIM1->CCR1 = 1400-(int)(pid_output*MAX_PWM);
+	uint16_t pwm_output = (uint16_t)(pid_output*MAX_PWM);
+	TIM1->CCR1 = 1400-pwm_output;
 
-	if(report_decimator_counter > 15000){
-		report_decimator_counter = 0;
-		char TxBuffer[1024];
-		sprintf(TxBuffer, "Voltage: %04.2fV, PWM: %04ld, PID_O: %01.4f, err: %f, d_err: %f, int: %f\n", voltage, 1400-TIM1->CCR1, pid_output, err, delta_err, pid_integrator);
-		uint32_t l = strlen(TxBuffer);
-		CDC_Transmit_FS((uint8_t*)TxBuffer, l);
+	if(decimation_index >= REPORT_DECIMATION){
+		voltage_history[history_index] = (uint16_t)voltage;
+		pwm_history[history_index] = pwm_output;
+		history_index++;
+		decimation_index = 0;
 	}
-	report_decimator_counter++;
+
+	if(history_index >= REPORT_CHUNK){
+		history_index = 0;
+		char TxBuffer[1024];
+		sprintf(TxBuffer, "Temperature Report, data size: %i\n",REPORT_CHUNK);
+		uint32_t l = strlen(TxBuffer);
+		memcpy(TxBuffer+l, voltage_history, sizeof(uint16_t)*REPORT_CHUNK);
+		memcpy(TxBuffer+l + sizeof(uint16_t)*REPORT_CHUNK, pwm_history, sizeof(uint16_t)*REPORT_CHUNK);
+		TxBuffer[l + sizeof(uint16_t)*(REPORT_CHUNK*2)] = '\n';
+		CDC_Transmit_FS((uint8_t*)TxBuffer, l + sizeof(uint16_t)*(REPORT_CHUNK*2) + 1);
+	}
+	decimation_index++;
 }
 
 /* USER CODE END 4 */

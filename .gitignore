@@ -1,6 +1,9 @@
 ControllApp/__pycache__/*
 ControllApp/.idea/*
 
+ScintilatorProbeSoftware/Release
+ScintilatorProbeSoftware/Debug
+
 #===KiCad====
 # Temporary files
 ScintillatorProbeHardware/*.000
