@@ -459,7 +459,26 @@
       "version": 3
     },
     "net_colors": null,
-    "netclass_assignments": null,
+    "netclass_assignments": {
+      "HT": "HT",
+      "Net-(R1-Pad1)": "HT",
+      "Net-(R2-Pad2)": "HT",
+      "Net-(R3-Pad1)": "HT",
+      "Net-(R4-Pad2)": "HT",
+      "Net-(R7-Pad1)": "HT",
+      "Net-(T1-SB)": "HT",
+      "Net-(V1-D1)": "HT",
+      "Net-(V1-D10)": "HT",
+      "Net-(V1-D11)": "HT",
+      "Net-(V1-D12)": "HT",
+      "Net-(V1-D2)": "HT",
+      "Net-(V1-D3)": "HT",
+      "Net-(V1-D4)": "HT",
+      "Net-(V1-D5)": "HT",
+      "Net-(V1-D7)": "HT",
+      "Net-(V1-D8)": "HT",
+      "Net-(V1-D9)": "HT"
+    },
     "netclass_patterns": []
   },
   "pcbnew": {
