@@ -4,6 +4,7 @@ gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 
 from PIDPage import PIDPage
+from MeasurementPage import MeasurementPage
 
 
 class MainWindow(Gtk.Window):
@@ -16,6 +17,7 @@ class MainWindow(Gtk.Window):
         self.add(self.notebook)
 
         self.notebook.append_page(PIDPage(), Gtk.Label(label="PID"))
+        self.notebook.append_page(MeasurementPage(), Gtk.Label(label="Measurement"))
 
         self.page2 = Gtk.Box()
         self.page2.set_border_width(10)

@@ -8,7 +8,7 @@ class SerialCallback:
 
 class _SerialHandler:
     def __init__(self):
-        self.device = "/dev/ttyACM0"
+        self.device = "/dev/pts/7"
         self.callbacks = []
         self.work_thread = threading.Thread(target=self.work_loop)
         self.serial = serial.Serial(port=self.device)

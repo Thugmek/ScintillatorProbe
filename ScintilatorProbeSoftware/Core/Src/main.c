@@ -53,17 +53,16 @@ typedef struct Gcode {
 #define ADC_TO_VOLTAGE 0.7510653409
 #define MAX_PWM 1200
 
-#define PID_P 100
-#define PID_I 0.0
-#define PID_D 0.0
+#define PEAK_UP_TRESSHOLD 200
+#define PEAK_DOWN_TRESSHOLD 100
 
-#define MAX_INTEGRATOR (1/PID_I)
 #define REPORT_CHUNK 100
 #define REPORT_DECIMATION 10
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
 ADC_HandleTypeDef hadc1;
+ADC_HandleTypeDef hadc2;
 
 TIM_HandleTypeDef htim1;
 
@@ -72,8 +71,7 @@ int pwm_value = 0;
 
 float target_voltage = 0.0;
 
-float pid_last_err = 0.0;
-float pid_integrator = 0.0;
+uint32_t peak_height = 0;
 
 uint16_t voltage_history[REPORT_CHUNK];
 uint16_t pwm_history[REPORT_CHUNK];
@@ -86,6 +84,7 @@ void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_TIM1_Init(void);
 static void MX_ADC1_Init(void);
+static void MX_ADC2_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -128,10 +127,12 @@ int main(void)
   MX_USB_DEVICE_Init();
   MX_TIM1_Init();
   MX_ADC1_Init();
+  MX_ADC2_Init();
   /* USER CODE BEGIN 2 */
   TIM1->CCR1 = 1400;
   HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
   HAL_ADC_Start_IT(&hadc1);
+  HAL_ADC_Start_IT(&hadc2);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -238,6 +239,53 @@ static void MX_ADC1_Init(void)
   /* USER CODE BEGIN ADC1_Init 2 */
 
   /* USER CODE END ADC1_Init 2 */
+
+}
+
+/**
+  * @brief ADC2 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_ADC2_Init(void)
+{
+
+  /* USER CODE BEGIN ADC2_Init 0 */
+
+  /* USER CODE END ADC2_Init 0 */
+
+  ADC_ChannelConfTypeDef sConfig = {0};
+
+  /* USER CODE BEGIN ADC2_Init 1 */
+
+  /* USER CODE END ADC2_Init 1 */
+
+  /** Common config
+  */
+  hadc2.Instance = ADC2;
+  hadc2.Init.ScanConvMode = ADC_SCAN_DISABLE;
+  hadc2.Init.ContinuousConvMode = ENABLE;
+  hadc2.Init.DiscontinuousConvMode = DISABLE;
+  hadc2.Init.ExternalTrigConv = ADC_SOFTWARE_START;
+  hadc2.Init.DataAlign = ADC_DATAALIGN_RIGHT;
+  hadc2.Init.NbrOfConversion = 1;
+  if (HAL_ADC_Init(&hadc2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /** Configure Regular Channel
+  */
+  sConfig.Channel = ADC_CHANNEL_1;
+  sConfig.Rank = ADC_REGULAR_RANK_1;
+  sConfig.SamplingTime = ADC_SAMPLETIME_1CYCLE_5;
+  if (HAL_ADC_ConfigChannel(&hadc2, &sConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN ADC2_Init 2 */
+
+  /* USER CODE END ADC2_Init 2 */
 
 }
 
@@ -467,43 +515,43 @@ void USB_CDC_RxHandler(uint8_t* Buf, uint32_t Len)
 //Sample rate 55_555kHz
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
 {
-    // Read & Update The ADC Result
-	uint32_t raw_adc = HAL_ADC_GetValue(&hadc1);
+	if(hadc == &hadc1){
+		// Read & Update The ADC Result
+		uint32_t raw_adc = HAL_ADC_GetValue(&hadc1);
 
-	float voltage = raw_adc*ADC_TO_VOLTAGE;
+		float voltage = raw_adc*ADC_TO_VOLTAGE;
 
-	/*float err = target_voltage-voltage;
-	float delta_err = err-pid_last_err;
-	pid_last_err = err;
-	pid_integrator += err;
-	if(pid_integrator > 1666666.0) pid_integrator = 1666666.0;
-	if(pid_integrator < -1666666.0) pid_integrator = 1666666.0;
+		if(decimation_index >= REPORT_DECIMATION){
+			voltage_history[history_index] = (uint16_t)voltage;
+			pwm_history[history_index] = 1400 - TIM1->CCR1;
+			history_index++;
+			decimation_index = 0;
+		}
 
-	float pid_output = (err*PID_P) + (pid_integrator*PID_I) + (delta_err*PID_D);
-	if(pid_output > 1.0) pid_output = 1.0;
-	if(pid_output < 0.0) pid_output = 0.0;
-
-	uint16_t pwm_output = (uint16_t)(pid_output*MAX_PWM);
-	TIM1->CCR1 = 1400-pwm_output;*/
-
-	if(decimation_index >= REPORT_DECIMATION){
-		voltage_history[history_index] = (uint16_t)voltage;
-		pwm_history[history_index] = 1400 - TIM1->CCR1;
-		history_index++;
-		decimation_index = 0;
+		if(history_index >= REPORT_CHUNK){
+			history_index = 0;
+			char TxBuffer[1024];
+			sprintf(TxBuffer, "R1: %i\n",REPORT_CHUNK);
+			uint32_t l = strlen(TxBuffer);
+			memcpy(TxBuffer+l, voltage_history, sizeof(uint16_t)*REPORT_CHUNK);
+			memcpy(TxBuffer+l + sizeof(uint16_t)*REPORT_CHUNK, pwm_history, sizeof(uint16_t)*REPORT_CHUNK);
+			TxBuffer[l + sizeof(uint16_t)*(REPORT_CHUNK*2)] = '\n';
+			CDC_Transmit_FS((uint8_t*)TxBuffer, l + sizeof(uint16_t)*(REPORT_CHUNK*2) + 1);
+		}
+		decimation_index++;
+	}else if(hadc == &hadc2){
+		uint32_t raw_adc = HAL_ADC_GetValue(&hadc1);
+		if(raw_adc >= PEAK_UP_THRESSHOLD || peak_height != 0){
+			if(raw_adc > peak_height){
+				peak_height = raw_adc;
+			}else if(raw_adc < peak_height - PEAK_DOWN_THRESSHOLD){
+				char TxBuffer[1024];
+				sprintf(TxBuffer, "R2:%i\n",peak_height);
+				uint32_t l = strlen(TxBuffer);
+				CDC_Transmit_FS((uint8_t*)TxBuffer, l);
+			}
+		}
 	}
-
-	if(history_index >= REPORT_CHUNK){
-		history_index = 0;
-		char TxBuffer[1024];
-		sprintf(TxBuffer, "Temperature Report, data size: %i\n",REPORT_CHUNK);
-		uint32_t l = strlen(TxBuffer);
-		memcpy(TxBuffer+l, voltage_history, sizeof(uint16_t)*REPORT_CHUNK);
-		memcpy(TxBuffer+l + sizeof(uint16_t)*REPORT_CHUNK, pwm_history, sizeof(uint16_t)*REPORT_CHUNK);
-		TxBuffer[l + sizeof(uint16_t)*(REPORT_CHUNK*2)] = '\n';
-		CDC_Transmit_FS((uint8_t*)TxBuffer, l + sizeof(uint16_t)*(REPORT_CHUNK*2) + 1);
-	}
-	decimation_index++;
 }
 
 /* USER CODE END 4 */
