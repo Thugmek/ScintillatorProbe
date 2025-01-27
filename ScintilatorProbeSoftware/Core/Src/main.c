@@ -53,8 +53,8 @@ typedef struct Gcode {
 #define ADC_TO_VOLTAGE 0.7510653409
 #define MAX_PWM 1200
 
-#define PEAK_UP_TRESSHOLD 200
-#define PEAK_DOWN_TRESSHOLD 100
+#define PEAK_UP_THRESSHOLD 200
+#define PEAK_DOWN_THRESSHOLD 100
 
 #define REPORT_CHUNK 100
 #define REPORT_DECIMATION 10
@@ -546,7 +546,7 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
 				peak_height = raw_adc;
 			}else if(raw_adc < peak_height - PEAK_DOWN_THRESSHOLD){
 				char TxBuffer[1024];
-				sprintf(TxBuffer, "R2:%i\n",peak_height);
+				sprintf(TxBuffer, "R2:%lu\n",peak_height);
 				uint32_t l = strlen(TxBuffer);
 				CDC_Transmit_FS((uint8_t*)TxBuffer, l);
 			}
