@@ -30,4 +30,4 @@ while True:
     msg = f"R2:{val}\n"
     print(msg)
     ser.write(msg.encode())
-    time.sleep(0.01)
+    time.sleep(0.1)
