@@ -56,6 +56,7 @@ void Error_Handler(void);
 
 /* USER CODE BEGIN EFP */
 void USB_CDC_RxHandler(uint8_t*, uint32_t);
+void HandleTim3(void);
 
 /* USER CODE END EFP */
 
