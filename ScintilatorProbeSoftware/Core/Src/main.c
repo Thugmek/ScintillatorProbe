@@ -53,8 +53,8 @@ typedef struct Gcode {
 #define ADC_TO_VOLTAGE 0.7510653409
 #define MAX_PWM 1200
 
-#define PEAK_UP_THRESSHOLD 200
-#define PEAK_DOWN_THRESSHOLD 100
+#define PEAK_THRESSHOLD 200
+#define PEAK_RESET_SAMPLES 5
 
 #define REPORT_CHUNK 100
 #define REPORT_DECIMATION 10
@@ -74,6 +74,7 @@ int pwm_value = 0;
 float target_voltage = 0.0;
 
 uint32_t peak_height = 0;
+uint32_t peak_reset_counter = 0;
 
 uint16_t voltage_history[REPORT_CHUNK];
 uint16_t pwm_history[REPORT_CHUNK];
@@ -468,6 +469,7 @@ static void MX_TIM3_Init(void)
   */
 static void MX_GPIO_Init(void)
 {
+  GPIO_InitTypeDef GPIO_InitStruct = {0};
 /* USER CODE BEGIN MX_GPIO_Init_1 */
 /* USER CODE END MX_GPIO_Init_1 */
 
@@ -475,6 +477,16 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOC_CLK_ENABLE();
   __HAL_RCC_GPIOD_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin : PA6 */
+  GPIO_InitStruct.Pin = GPIO_PIN_6;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
 /* USER CODE BEGIN MX_GPIO_Init_2 */
 /* USER CODE END MX_GPIO_Init_2 */
@@ -647,15 +659,25 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
 		}
 		decimation_index++;
 	}else if(hadc == &hadc2){
-		uint32_t raw_adc = HAL_ADC_GetValue(&hadc1);
-		if(raw_adc >= PEAK_UP_THRESSHOLD || peak_height != 0){
-			if(raw_adc > peak_height){
-				peak_height = raw_adc;
-			}else if(raw_adc < peak_height - PEAK_DOWN_THRESSHOLD){
-				char TxBuffer[1024];
-				sprintf(TxBuffer, "R2:%lu\n",peak_height);
-				uint32_t l = strlen(TxBuffer);
-				CDC_Transmit_FS((uint8_t*)TxBuffer, l);
+		if(peak_reset_counter == 0){
+			uint32_t raw_adc = HAL_ADC_GetValue(&hadc1);
+			if(raw_adc >= PEAK_THRESSHOLD){
+				if(raw_adc > peak_height){
+					peak_height = raw_adc;
+				}else{
+					char TxBuffer[1024];
+					sprintf(TxBuffer, "R2:%lu\n",peak_height);
+					uint32_t l = strlen(TxBuffer);
+					CDC_Transmit_FS((uint8_t*)TxBuffer, l);
+					peak_height = 0;
+					peak_reset_counter = PEAK_RESET_SAMPLES;
+					HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, GPIO_PIN_SET);
+				}
+			}
+		}else{
+			peak_reset_counter--;
+			if(peak_reset_counter == 0){
+				HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, GPIO_PIN_RESET);
 			}
 		}
 	}

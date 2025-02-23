@@ -494,259 +494,6 @@
 				)
 			)
 		)
-		(symbol "Amplifier_Operational:LM4562"
-			(pin_names
-				(offset 0.127)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "U"
-				(at 0 5.08 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "LM4562"
-				(at 0 -5.08 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "http://www.ti.com/lit/ds/symlink/lm4562.pdf"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Dual High-Performance, High-Fidelity Audio Operational Amplifier, DIP-8/SOIC-8/TO-99-8"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_locked" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "dual opamp"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "SOIC*3.9x4.9mm*P1.27mm* DIP*W7.62mm* TO*99* OnSemi*Micro8* TSSOP*3x3mm*P0.65mm* TSSOP*4.4x3mm*P0.65mm* MSOP*3x3mm*P0.65mm* SSOP*3.9x4.9mm*P0.635mm* LFCSP*2x2mm*P0.5mm* *SIP* SOIC*5.3x6.2mm*P1.27mm*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "LM4562_1_1"
-				(polyline
-					(pts
-						(xy -5.08 5.08) (xy 5.08 0) (xy -5.08 -5.08) (xy -5.08 5.08)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(pin output line
-					(at 7.62 0 180)
-					(length 2.54)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -7.62 -2.54 0)
-					(length 2.54)
-					(name "-"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -7.62 2.54 0)
-					(length 2.54)
-					(name "+"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(symbol "LM4562_2_1"
-				(polyline
-					(pts
-						(xy -5.08 5.08) (xy 5.08 0) (xy -5.08 -5.08) (xy -5.08 5.08)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(pin input line
-					(at -7.62 2.54 0)
-					(length 2.54)
-					(name "+"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -7.62 -2.54 0)
-					(length 2.54)
-					(name "-"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin output line
-					(at 7.62 0 180)
-					(length 2.54)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "7"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(symbol "LM4562_3_1"
-				(pin power_in line
-					(at -2.54 -7.62 90)
-					(length 3.81)
-					(name "V-"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at -2.54 7.62 270)
-					(length 3.81)
-					(name "V+"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "8"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
 		(symbol "Connector:USB_B"
 			(pin_names
 				(offset 1.016)
@@ -7627,12 +7374,6 @@
 		(uuid "2686c173-6117-456e-85e9-10955e30d7b5")
 	)
 	(junction
-		(at 127 227.33)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "280539d8-29e5-48ef-aa4b-bb80123b3338")
-	)
-	(junction
 		(at 346.71 227.33)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -7811,12 +7552,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "98df8395-9384-4290-9c1d-28bb83417b7a")
-	)
-	(junction
-		(at 127 209.55)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "9a8f068c-0e18-4764-8a4b-6a687ac4819e")
 	)
 	(junction
 		(at 320.04 234.95)
@@ -8330,16 +8065,6 @@
 	)
 	(wire
 		(pts
-			(xy 127 226.06) (xy 127 227.33)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "15350c00-ac83-4007-8392-83664781d325")
-	)
-	(wire
-		(pts
 			(xy 123.19 57.15) (xy 127 57.15)
 		)
 		(stroke
@@ -8670,16 +8395,6 @@
 	)
 	(wire
 		(pts
-			(xy 127 208.28) (xy 127 209.55)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "275d43f5-c557-4ec5-8932-c4814e478244")
-	)
-	(wire
-		(pts
 			(xy 146.05 162.56) (xy 161.29 162.56)
 		)
 		(stroke
@@ -8747,16 +8462,6 @@
 			(type default)
 		)
 		(uuid "2a450878-4e1a-4b46-8328-fa6bb4a6f108")
-	)
-	(wire
-		(pts
-			(xy 138.43 222.25) (xy 138.43 227.33)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2a543b44-755f-4743-b689-aebf2161aaab")
 	)
 	(wire
 		(pts
@@ -9507,16 +9212,6 @@
 			(type default)
 		)
 		(uuid "5f7f8ca0-e378-48f5-8a58-c85f588c099d")
-	)
-	(wire
-		(pts
-			(xy 138.43 214.63) (xy 138.43 209.55)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "604ef971-7957-44fb-a9df-c3ab6e18afa0")
 	)
 	(wire
 		(pts
@@ -10800,16 +10495,6 @@
 	)
 	(wire
 		(pts
-			(xy 138.43 209.55) (xy 127 209.55)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b2abdc2c-b1ec-4ea6-928f-a92e69e08ec1")
-	)
-	(wire
-		(pts
 			(xy 341.63 223.52) (xy 341.63 227.33)
 		)
 		(stroke
@@ -10837,16 +10522,6 @@
 			(type default)
 		)
 		(uuid "b365de87-8662-4d99-9944-165f9971749b")
-	)
-	(wire
-		(pts
-			(xy 127 209.55) (xy 127 210.82)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b3a8cc3b-a919-4817-b696-5b5c225bc731")
 	)
 	(wire
 		(pts
@@ -11057,16 +10732,6 @@
 			(type default)
 		)
 		(uuid "c5077154-ca21-4717-acdc-eafc5b0ba6cb")
-	)
-	(wire
-		(pts
-			(xy 138.43 227.33) (xy 127 227.33)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c5129614-49bf-4d02-b5ce-e6003cf04d81")
 	)
 	(wire
 		(pts
@@ -11307,16 +10972,6 @@
 			(type default)
 		)
 		(uuid "d26977aa-c5dc-4e23-9a5a-1a055bad7ab2")
-	)
-	(wire
-		(pts
-			(xy 127 227.33) (xy 127 228.6)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d30e486b-49ac-4c65-9f1f-1cb49166d605")
 	)
 	(wire
 		(pts
@@ -12391,6 +12046,29 @@
 	(netclass_flag ""
 		(length 2.54)
 		(shape round)
+		(at 124.46 123.19 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "0cecbee5-114e-44e1-81cc-66d71cb1a82d")
+		(property "Netclass" "HT"
+			(at 125.1585 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
 		(at 165.1 113.03 0)
 		(fields_autoplaced yes)
 		(effects
@@ -12529,6 +12207,29 @@
 	(netclass_flag ""
 		(length 2.54)
 		(shape round)
+		(at 138.43 123.19 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "6cdb764b-a85c-4d09-a7bb-0f88d1457c2a")
+		(property "Netclass" "HT"
+			(at 139.1285 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
 		(at 93.98 57.15 0)
 		(fields_autoplaced yes)
 		(effects
@@ -12563,6 +12264,52 @@
 		(uuid "730d5dd3-e4eb-40fd-84fd-1e524455d9ed")
 		(property "Netclass" "HT"
 			(at 68.0085 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 146.05 173.99 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "795cb040-73af-43c7-93f5-2997a215f5ef")
+		(property "Netclass" "HT"
+			(at 143.51 173.2915 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 137.16 173.99 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "7f0f61f9-1bf5-4ad9-b053-2a61f69d58f2")
+		(property "Netclass" "HT"
+			(at 134.62 173.2915 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12632,6 +12379,52 @@
 		(uuid "8ef77178-45e6-4d2a-90b2-e9c922dbb02a")
 		(property "Netclass" "HT"
 			(at 79.4385 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 127 173.99 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "8fb47ac6-872d-4684-ab12-74fad3281cd7")
+		(property "Netclass" "HT"
+			(at 124.46 173.2915 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 118.11 172.72 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "b15b064a-7538-4779-b3d2-bd26e069e474")
+		(property "Netclass" "HT"
+			(at 115.57 172.0215 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12733,6 +12526,75 @@
 			)
 		)
 	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 123.19 181.61 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "e73ed005-4d28-4a4b-bda4-4aa68a429615")
+		(property "Netclass" "HT"
+			(at 123.8885 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 132.08 163.83 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "f3a23724-900d-4e70-8305-c1adfc9c4b71")
+		(property "Netclass" "HT"
+			(at 132.7785 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 142.24 181.61 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "fe0acb71-476f-4c17-b234-9faa13bd2cbb")
+		(property "Netclass" "HT"
+			(at 142.9385 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+	)
 	(symbol
 		(lib_id "Device:C")
 		(at 180.34 118.11 0)
@@ -12761,7 +12623,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:C_Disc_D16.0mm_W5.0mm_P7.50mm"
 			(at 181.3052 121.92 0)
 			(effects
 				(font
@@ -12848,6 +12710,24 @@
 			)
 		)
 		(property "Description" "Operational Amplifier, DIP-8"
+			(at 308.61 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "https://www.lcsc.com/product-detail/Operational-Amplifier_Texas-Instruments-LM318D_C1347395.html?s_z=n_LM318"
+			(at 308.61 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part Number" "C1347395"
 			(at 308.61 38.1 0)
 			(effects
 				(font
@@ -13222,7 +13102,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_1812_4532Metric"
 			(at 328.93 64.008 90)
 			(effects
 				(font
@@ -13242,6 +13122,24 @@
 		)
 		(property "Description" "Resistor"
 			(at 328.93 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_FOJAN-FRC1812J331-TS_C2933950.html"
+			(at 328.93 62.23 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part Number" "C2933950"
+			(at 328.93 62.23 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14600,79 +14498,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:Q_NPN_CBE")
-		(at 339.09 62.23 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "21895176-491d-4f68-aa98-92f48ee3555d")
-		(property "Reference" "Q5"
-			(at 344.17 60.9599 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "2N2222A"
-			(at 344.17 63.4999 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 344.17 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 339.09 62.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "NPN transistor, collector/base/emitter"
-			(at 339.09 62.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "b630e770-c393-466f-bfa9-9abd3f71b51c")
-		)
-		(pin "3"
-			(uuid "b5a11c39-fda2-467f-ad1f-f458639374f2")
-		)
-		(pin "1"
-			(uuid "e784aaf2-6e74-4467-9c26-4e651c69217b")
-		)
-		(instances
-			(project "ScintillatorProbeHardware"
-				(path "/b577c016-7a5f-4050-822e-6f81bc7c5cda"
-					(reference "Q5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:+5VA")
 		(at 266.7 31.75 0)
 		(unit 1)
@@ -14766,7 +14591,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 249.682 43.18 90)
 			(effects
 				(font
@@ -14785,6 +14610,24 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 251.46 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_UNI-ROYAL-Uniroyal-Elec-0603WAF1001T5E_C21190.html"
+			(at 251.46 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part Number" "C21190"
 			(at 251.46 43.18 0)
 			(effects
 				(font
@@ -15624,7 +15467,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 289.56 42.418 90)
 			(effects
 				(font
@@ -15644,6 +15487,24 @@
 		)
 		(property "Description" "Resistor"
 			(at 289.56 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_UNI-ROYAL-Uniroyal-Elec-0603WAF1001T5E_C21190.html"
+			(at 289.56 40.64 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part Number" "C21190"
+			(at 289.56 40.64 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16329,7 +16190,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_1812_4532Metric"
 			(at 304.8 73.152 90)
 			(effects
 				(font
@@ -16349,6 +16210,24 @@
 		)
 		(property "Description" "Resistor"
 			(at 304.8 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_FOJAN-FRC1812J331-TS_C2933950.html"
+			(at 304.8 74.93 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part Number" "C2933950"
+			(at 304.8 74.93 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16460,91 +16339,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Amplifier_Operational:LM4562")
-		(at 129.54 218.44 0)
-		(unit 3)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "4ab30110-2181-4b82-ab0c-e20cb7dca88c")
-		(property "Reference" "U2"
-			(at 131.572 217.17 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "LM4562"
-			(at 131.572 219.71 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 129.54 218.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/lm4562.pdf"
-			(at 129.54 218.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Dual High-Performance, High-Fidelity Audio Operational Amplifier, DIP-8/SOIC-8/TO-99-8"
-			(at 129.54 218.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "8"
-			(uuid "93c0de32-4390-464a-933d-df7577c68919")
-		)
-		(pin "7"
-			(uuid "eb543f12-9c32-4f4e-b1f9-084de411f93e")
-		)
-		(pin "6"
-			(uuid "f0373d6f-5ce5-48d0-b3b3-5a1e9b373a6f")
-		)
-		(pin "2"
-			(uuid "79973bb8-281d-4a70-9caa-9ca9be5441ce")
-		)
-		(pin "5"
-			(uuid "04eac86f-9a43-432d-be70-0df13bc147b7")
-		)
-		(pin "1"
-			(uuid "27d2bb7a-3bdc-4f06-a304-34e2351d6f5a")
-		)
-		(pin "4"
-			(uuid "0de0dc65-45c1-4a59-b4c9-d291d89ac894")
-		)
-		(pin "3"
-			(uuid "a9d223b2-b62d-4cda-b96e-205e394bfa4d")
-		)
-		(instances
-			(project "ScintillatorProbeHardware"
-				(path "/b577c016-7a5f-4050-822e-6f81bc7c5cda"
-					(reference "U2")
-					(unit 3)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C")
 		(at 203.2 118.11 0)
 		(unit 1)
@@ -16572,7 +16366,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:C_Disc_D16.0mm_W5.0mm_P7.50mm"
 			(at 204.1652 121.92 0)
 			(effects
 				(font
@@ -16741,167 +16535,6 @@
 			(project "ScintillatorProbeHardware"
 				(path "/b577c016-7a5f-4050-822e-6f81bc7c5cda"
 					(reference "#PWR031")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 138.43 218.44 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "4bf59824-46fc-4bf2-be6c-b2e6a782c663")
-		(property "Reference" "C17"
-			(at 142.24 217.1699 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "100n"
-			(at 142.24 219.7099 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 137.4648 214.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 138.43 218.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Unpolarized capacitor"
-			(at 138.43 218.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "https://www.lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_HRE-CGA0603X7R104K500JT_C6119867.html"
-			(at 138.43 218.44 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC Part Number" "C6119867"
-			(at 138.43 218.44 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "55a6f07b-111e-4cfa-aec0-da5d8f8e212a")
-		)
-		(pin "1"
-			(uuid "4b05fbd9-8cb6-495d-9e7d-ca92dfc1d870")
-		)
-		(instances
-			(project "ScintillatorProbeHardware"
-				(path "/b577c016-7a5f-4050-822e-6f81bc7c5cda"
-					(reference "C17")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:Q_NPN_CBE")
-		(at 316.23 74.93 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "4e47b2b7-8e37-4ff2-8154-5baed9f40772")
-		(property "Reference" "Q6"
-			(at 321.31 73.6599 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "2N2222A"
-			(at 321.31 76.1999 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 321.31 72.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 316.23 74.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "NPN transistor, collector/base/emitter"
-			(at 316.23 74.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "2993d770-bf5a-467f-bf98-6ff9ff54d1ba")
-		)
-		(pin "3"
-			(uuid "1973bd5c-9b60-457b-b381-d2734e9d6875")
-		)
-		(pin "1"
-			(uuid "46de25d7-4f61-433a-95bf-8b2c0ae5c65d")
-		)
-		(instances
-			(project "ScintillatorProbeHardware"
-				(path "/b577c016-7a5f-4050-822e-6f81bc7c5cda"
-					(reference "Q6")
 					(unit 1)
 				)
 			)
@@ -17460,7 +17093,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 350.8248 45.72 0)
 			(effects
 				(font
@@ -17479,6 +17112,24 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
+			(at 351.79 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "https://www.lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_YAGEO-CC0603KRX7R9BB104_C14663.html"
+			(at 351.79 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part Number" "C14663"
 			(at 351.79 49.53 0)
 			(effects
 				(font
@@ -17939,6 +17590,97 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:Q_NPN_CBE")
+		(at 316.23 74.93 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "637a935a-5214-40d3-9584-7b4f4120de21")
+		(property "Reference" "Q6"
+			(at 321.31 73.6599 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "S8050"
+			(at 321.31 76.1999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 321.31 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 316.23 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "NPN transistor, collector/base/emitter"
+			(at 316.23 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "https://www.lcsc.com/product-detail/Bipolar-BJT_Guangdong-Hottech-S8050_C181158.html"
+			(at 316.23 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part Number" "C181158"
+			(at 316.23 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "589c8165-bbb5-450d-bc89-47a14a2d1622")
+		)
+		(pin "2"
+			(uuid "0f2fa565-8034-490d-a1bf-34eb48ef7dc3")
+		)
+		(pin "3"
+			(uuid "ef39e724-7c1d-4bbb-b304-34f08ab6ee43")
+		)
+		(instances
+			(project "ScintillatorProbeHardware"
+				(path "/b577c016-7a5f-4050-822e-6f81bc7c5cda"
+					(reference "Q6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 147.32 113.03 90)
 		(unit 1)
@@ -18248,7 +17990,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:C_Disc_D16.0mm_W5.0mm_P7.50mm"
 			(at 169.8752 121.92 0)
 			(effects
 				(font
@@ -18291,72 +18033,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+5VA")
-		(at 127 208.28 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "6b5f2f5a-ebd1-428f-a6d8-30c63e6fbdf0")
-		(property "Reference" "#PWR021"
-			(at 127 212.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+5VA"
-			(at 127 203.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 127 208.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 127 208.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+5VA\""
-			(at 127 208.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "965ff3a5-b607-4d87-b08c-212eb052abe1")
-		)
-		(instances
-			(project ""
-				(path "/b577c016-7a5f-4050-822e-6f81bc7c5cda"
-					(reference "#PWR021")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:D")
 		(at 129.54 123.19 180)
 		(unit 1)
@@ -18382,7 +18058,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Diode_THT:D_A-405_P12.70mm_Horizontal"
 			(at 129.54 123.19 0)
 			(effects
 				(font
@@ -19018,76 +18694,6 @@
 			(project ""
 				(path "/b577c016-7a5f-4050-822e-6f81bc7c5cda"
 					(reference "#PWR035")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:D_Schottky")
-		(at 397.51 40.64 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "7e539569-4f64-443d-a7ed-d40e14f9c84a")
-		(property "Reference" "D2"
-			(at 400.05 39.0524 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "D_Schottky"
-			(at 400.05 41.5924 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 397.51 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 397.51 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Schottky diode"
-			(at 397.51 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "cf73b1f0-d276-48af-a702-38704ec03c54")
-		)
-		(pin "2"
-			(uuid "848f2bc1-2ea5-4b76-ae2a-c421a9f7b1d5")
-		)
-		(instances
-			(project ""
-				(path "/b577c016-7a5f-4050-822e-6f81bc7c5cda"
-					(reference "D2")
 					(unit 1)
 				)
 			)
@@ -20039,7 +19645,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 391.16 48.768 90)
 			(effects
 				(font
@@ -20059,6 +19665,24 @@
 		)
 		(property "Description" "Resistor"
 			(at 391.16 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_UNI-ROYAL-Uniroyal-Elec-0603WAF1001T5E_C21190.html"
+			(at 391.16 46.99 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part Number" "C21190"
+			(at 391.16 46.99 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20552,6 +20176,24 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "https://www.lcsc.com/product-detail/Operational-Amplifier_Texas-Instruments-LM318D_C1347395.html?s_z=n_LM318"
+			(at 372.11 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part Number" "C1347395"
+			(at 372.11 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "8"
 			(uuid "368923c7-a694-4205-a5e4-4e11d7900f68")
 		)
@@ -20832,7 +20474,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 294.132 46.99 90)
 			(effects
 				(font
@@ -20851,6 +20493,24 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 295.91 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_UNI-ROYAL-Uniroyal-Elec-0603WAF1002T5E_C25804.html"
+			(at 295.91 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part Number" "C25804"
 			(at 295.91 46.99 0)
 			(effects
 				(font
@@ -21181,17 +20841,17 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:Q_NPN_CBE")
-		(at 339.09 38.1 0)
+		(lib_id "Device:D_Schottky")
+		(at 397.51 53.34 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "aedcfcc3-3690-4c1a-817f-88e0369bd164")
-		(property "Reference" "Q3"
-			(at 344.17 36.8299 0)
+		(uuid "aecf38ba-9112-49b2-8d7d-ebbc843eedaf")
+		(property "Reference" "D3"
+			(at 400.05 51.7524 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21199,8 +20859,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "2N2222A"
-			(at 344.17 39.3699 0)
+		(property "Value" "D_Schottky"
+			(at 400.05 54.2924 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21208,8 +20868,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
-			(at 344.17 35.56 0)
+		(property "Footprint" "Diode_SMD:D_SOD-523"
+			(at 397.51 53.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21218,7 +20878,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 339.09 38.1 0)
+			(at 397.51 53.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21226,8 +20886,26 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "NPN transistor, collector/base/emitter"
-			(at 339.09 38.1 0)
+		(property "Description" "Schottky diode"
+			(at 397.51 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "https://www.lcsc.com/product-detail/Schottky-Diodes_onsemi-RB521S30T1G_C145179.html?s_z=s_Diodes%7CSchottky%20Diodes"
+			(at 397.51 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part Number" "C145179"
+			(at 397.51 53.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21236,18 +20914,15 @@
 			)
 		)
 		(pin "2"
-			(uuid "e78df320-4a23-4515-9b8e-101f01396b3c")
-		)
-		(pin "3"
-			(uuid "971b029e-30b9-4840-92b4-168319617bb1")
+			(uuid "ee60d356-9011-404a-b3ef-3564cadc6a6d")
 		)
 		(pin "1"
-			(uuid "77b7e155-1888-4c31-b130-189c72e53cfb")
+			(uuid "9fb00a94-11f2-4cdb-be31-7199b3bb4427")
 		)
 		(instances
-			(project ""
+			(project "ScintillatorProbeHardware"
 				(path "/b577c016-7a5f-4050-822e-6f81bc7c5cda"
-					(reference "Q3")
+					(reference "D3")
 					(unit 1)
 				)
 			)
@@ -22714,72 +22389,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:-5VA")
-		(at 127 228.6 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "c77c422c-023e-43dc-b360-06809d0085eb")
-		(property "Reference" "#PWR022"
-			(at 127 224.79 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "-5VA"
-			(at 127 233.68 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 127 228.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 127 228.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"-5VA\""
-			(at 127 228.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "64321d2e-ff4c-4325-a976-f28f3f204c9e")
-		)
-		(instances
-			(project ""
-				(path "/b577c016-7a5f-4050-822e-6f81bc7c5cda"
-					(reference "#PWR022")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C")
 		(at 158.75 118.11 0)
 		(unit 1)
@@ -22807,7 +22416,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:C_Disc_D16.0mm_W5.0mm_P7.50mm"
 			(at 159.7152 121.92 0)
 			(effects
 				(font
@@ -23248,6 +22857,97 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:Q_NPN_CBE")
+		(at 339.09 62.23 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "dae00007-4613-4d61-9b29-95841a151923")
+		(property "Reference" "Q5"
+			(at 344.17 60.9599 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "S8050"
+			(at 344.17 63.4999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 344.17 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 339.09 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "NPN transistor, collector/base/emitter"
+			(at 339.09 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "https://www.lcsc.com/product-detail/Bipolar-BJT_Guangdong-Hottech-S8050_C181158.html"
+			(at 339.09 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part Number" "C181158"
+			(at 339.09 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "0c542660-d431-41f8-b693-6aba40ffd662")
+		)
+		(pin "2"
+			(uuid "97e347bc-f9a8-4784-acb2-4bb7960c0f4b")
+		)
+		(pin "3"
+			(uuid "bbcc99e7-26b2-44dc-aa45-e11240733eb7")
+		)
+		(instances
+			(project "ScintillatorProbeHardware"
+				(path "/b577c016-7a5f-4050-822e-6f81bc7c5cda"
+					(reference "Q5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 146.05 177.8 180)
 		(unit 1)
@@ -23468,6 +23168,24 @@
 			)
 		)
 		(property "Description" "Operational Amplifier, DIP-8"
+			(at 269.24 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "https://www.lcsc.com/product-detail/Operational-Amplifier_Texas-Instruments-LM318D_C1347395.html?s_z=n_LM318"
+			(at 269.24 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part Number" "C1347395"
 			(at 269.24 40.64 0)
 			(effects
 				(font
@@ -23834,76 +23552,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:D_Schottky")
-		(at 397.51 53.34 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "ed8d519a-5e01-47cf-95ca-2fc20581f03a")
-		(property "Reference" "D3"
-			(at 400.05 51.7524 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "D_Schottky"
-			(at 400.05 54.2924 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 397.51 53.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 397.51 53.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Schottky diode"
-			(at 397.51 53.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "7ae3f232-3a2a-4826-b7e1-c686dce29034")
-		)
-		(pin "2"
-			(uuid "7c3d1d94-06c3-4b6e-9c21-c6a45a354ab6")
-		)
-		(instances
-			(project ""
-				(path "/b577c016-7a5f-4050-822e-6f81bc7c5cda"
-					(reference "D3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Connector_Generic:Conn_01x04")
 		(at 491.49 207.01 0)
 		(unit 1)
@@ -23931,7 +23579,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical"
 			(at 491.49 207.01 0)
 			(effects
 				(font
@@ -24292,7 +23940,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:C_Disc_D16.0mm_W5.0mm_P7.50mm"
 			(at 192.7352 121.92 0)
 			(effects
 				(font
@@ -24448,7 +24096,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:C_Disc_D16.0mm_W5.0mm_P7.50mm"
 			(at 139.3952 121.92 0)
 			(effects
 				(font
@@ -24718,6 +24366,94 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:D_Schottky")
+		(at 397.51 40.64 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "fd04ef14-f089-422b-8c6a-8b2c1c8a24ad")
+		(property "Reference" "D2"
+			(at 400.05 39.0524 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "D_Schottky"
+			(at 400.05 41.5924 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Diode_SMD:D_SOD-523"
+			(at 397.51 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 397.51 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Schottky diode"
+			(at 397.51 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "https://www.lcsc.com/product-detail/Schottky-Diodes_onsemi-RB521S30T1G_C145179.html?s_z=s_Diodes%7CSchottky%20Diodes"
+			(at 397.51 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part Number" "C145179"
+			(at 397.51 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "64f173eb-cd9f-42b4-af43-2eaaa5d95388")
+		)
+		(pin "1"
+			(uuid "cdb5206a-f23a-4a64-ac2a-2b5c045b91f7")
+		)
+		(instances
+			(project "ScintillatorProbeHardware"
+				(path "/b577c016-7a5f-4050-822e-6f81bc7c5cda"
+					(reference "D2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C_Polarized")
 		(at 381 170.18 0)
 		(unit 1)
@@ -24800,6 +24536,97 @@
 			(project "ScintillatorProbeHardware"
 				(path "/b577c016-7a5f-4050-822e-6f81bc7c5cda"
 					(reference "C21")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:Q_NPN_CBE")
+		(at 339.09 38.1 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "fe231048-1b63-4b09-b501-c1fc4182047f")
+		(property "Reference" "Q3"
+			(at 344.17 36.8299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "S8050"
+			(at 344.17 39.3699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 344.17 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 339.09 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "NPN transistor, collector/base/emitter"
+			(at 339.09 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "https://www.lcsc.com/product-detail/Bipolar-BJT_Guangdong-Hottech-S8050_C181158.html"
+			(at 339.09 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part Number" "C181158"
+			(at 339.09 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "461065cc-9af1-4bf3-9e65-e3ac2f84493a")
+		)
+		(pin "2"
+			(uuid "42ec6458-2a6d-4032-a7ee-35da4c96a0df")
+		)
+		(pin "3"
+			(uuid "9e34d902-319d-4bfd-b602-e11196a3ca26")
+		)
+		(instances
+			(project "ScintillatorProbeHardware"
+				(path "/b577c016-7a5f-4050-822e-6f81bc7c5cda"
+					(reference "Q3")
 					(unit 1)
 				)
 			)
