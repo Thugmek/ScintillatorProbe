@@ -69,11 +69,12 @@ class MeasurementPage(Gtk.Box):
         GLib.timeout_add(2000, self.redraw_chart)
 
     def update(self, event):
-        if event.xdata is None:
-            print('Drag mouse over axes for position')
-        else:
-            print(f'x,y=({event.xdata}, {event.ydata})')
-            print(event)
+        # if event.xdata is None:
+        #     print('Drag mouse over axes for position')
+        # else:
+        #     print(f'x,y=({event.xdata}, {event.ydata})')
+        #     print(event)
+        pass
 
     def update_decimation(self, combo):
         tree_iter = combo.get_active_iter()

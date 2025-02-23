@@ -53,8 +53,8 @@ typedef struct Gcode {
 #define ADC_TO_VOLTAGE 0.7510653409
 #define MAX_PWM 1200
 
-#define PEAK_THRESSHOLD 200
-#define PEAK_RESET_SAMPLES 5
+#define PEAK_THRESSHOLD 50
+#define PEAK_RESET_SAMPLES 3
 
 #define REPORT_CHUNK 100
 #define REPORT_DECIMATION 10
@@ -434,7 +434,7 @@ static void MX_TIM3_Init(void)
   htim3.Instance = TIM3;
   htim3.Init.Prescaler = 6399;
   htim3.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim3.Init.Period = 5000;
+  htim3.Init.Period = 200;
   htim3.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim3.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_Base_Init(&htim3) != HAL_OK)
@@ -660,7 +660,7 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
 		decimation_index++;
 	}else if(hadc == &hadc2){
 		if(peak_reset_counter == 0){
-			uint32_t raw_adc = HAL_ADC_GetValue(&hadc1);
+			uint32_t raw_adc = HAL_ADC_GetValue(&hadc2);
 			if(raw_adc >= PEAK_THRESSHOLD){
 				if(raw_adc > peak_height){
 					peak_height = raw_adc;
@@ -672,6 +672,8 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
 					peak_height = 0;
 					peak_reset_counter = PEAK_RESET_SAMPLES;
 					HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, GPIO_PIN_SET);
+					TIM2->CCR4 = 300;
+					HAL_TIM_Base_Start_IT(&htim3);
 				}
 			}
 		}else{
@@ -684,14 +686,8 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
 }
 
 void HandleTim3(void){
-	if (TIM2->CCR4){
-		TIM2->CCR4 = 0;
-	}else{
-		TIM2->CCR4 = 300;
-	}
-	TIM3->CNT = 4500;
+	TIM2->CCR4 = 0;
 	HAL_TIM_Base_Stop_IT(&htim3);
-	HAL_TIM_Base_Start_IT(&htim3);
 }
 
 /* USER CODE END 4 */

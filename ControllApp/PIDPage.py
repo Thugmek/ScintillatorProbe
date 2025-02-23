@@ -100,6 +100,7 @@ class PIDPage(Gtk.Box):
         fig = Figure(figsize=(5, 4), dpi=100)
         self.ax = fig.add_subplot()
         self.ax.set_ylim([0,3200])
+        self.ax.set_yticks(np.arange(0, 3200, 100))
         self.voltages = [0] * 200
         self.voltages_min = [0] * 200
         self.voltages_max = [0] * 200
@@ -120,7 +121,7 @@ class PIDPage(Gtk.Box):
         page_hbox.add(self.canvas)
 
         self.data_lock = threading.Lock()
-        SerialHandler.add_callback(SerialCallback(b"Temperature Report, data size", self.serial_callback))
+        SerialHandler.add_callback(SerialCallback(b"R1:", self.serial_callback))
 
         GLib.timeout_add(300,self.redraw_chart)
 
