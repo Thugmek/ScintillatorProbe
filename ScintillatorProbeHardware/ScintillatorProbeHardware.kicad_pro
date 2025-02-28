@@ -178,7 +178,10 @@
         }
       ],
       "track_widths": [
-        0.0
+        0.0,
+        0.25,
+        0.5,
+        1.0
       ],
       "tuning_pattern_settings": {
         "diff_pair_defaults": {
@@ -493,6 +496,7 @@
       "HT": "HT",
       "Net-(D1-A)": "HT",
       "Net-(D1-K)": "HT",
+      "Net-(J5-Pin_1)": "HT",
       "Net-(R1-Pad1)": "HT",
       "Net-(R2-Pad2)": "HT",
       "Net-(R25-Pad1)": "HT",
