@@ -819,6 +819,116 @@
 				)
 			)
 		)
+		(symbol "Connector_Generic:Conn_01x01"
+			(pin_names
+				(offset 1.016) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J"
+				(at 0 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Conn_01x01"
+				(at 0 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "connector"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Connector*:*_1x??_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Conn_01x01_1_1"
+				(rectangle
+					(start -1.27 0.127)
+					(end 0 -0.127)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 1.27)
+					(end 1.27 -1.27)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "Connector_Generic:Conn_01x02"
 			(pin_names
 				(offset 1.016) hide)
@@ -7582,6 +7692,12 @@
 		(uuid "7da62039-e91e-4db8-8c98-86e94d9d74f7")
 	)
 	(junction
+		(at 440.69 177.8)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "85474573-3fb5-4a28-8fdd-46eb428c06f6")
+	)
+	(junction
 		(at 92.71 104.14)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -7832,6 +7948,16 @@
 			(type default)
 		)
 		(uuid "01316f9a-5cf0-4adc-a54b-7ddc243eb2d5")
+	)
+	(wire
+		(pts
+			(xy 35.56 143.51) (xy 35.56 140.97)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "01b9335f-cae0-4052-abcc-caec95b98043")
 	)
 	(wire
 		(pts
@@ -8535,16 +8661,6 @@
 	)
 	(wire
 		(pts
-			(xy 167.64 24.13) (xy 167.64 21.59)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "267db8e0-e1c0-4dc8-a8cb-faa60c7a195d")
-	)
-	(wire
-		(pts
 			(xy 95.25 220.98) (xy 109.22 220.98)
 		)
 		(stroke
@@ -8672,6 +8788,16 @@
 			(type default)
 		)
 		(uuid "2bbffc29-eff6-405a-96cc-048a5de3ac9a")
+	)
+	(wire
+		(pts
+			(xy 35.56 135.89) (xy 36.83 135.89)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2bf83ec0-6f04-4053-8291-178db63f515a")
 	)
 	(wire
 		(pts
@@ -8812,6 +8938,16 @@
 			(type default)
 		)
 		(uuid "3a507a73-ab19-44f8-8b7f-b4d5ea84c83d")
+	)
+	(wire
+		(pts
+			(xy 440.69 177.8) (xy 440.69 179.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3a933186-139f-4ba9-b542-5cf6c657d95c")
 	)
 	(wire
 		(pts
@@ -10085,6 +10221,16 @@
 	)
 	(wire
 		(pts
+			(xy 166.37 29.21) (xy 163.83 29.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "85a168fd-11f6-43dc-a565-cee336943712")
+	)
+	(wire
+		(pts
 			(xy 102.87 120.65) (xy 102.87 113.03)
 		)
 		(stroke
@@ -10205,6 +10351,16 @@
 	)
 	(wire
 		(pts
+			(xy 438.15 177.8) (xy 440.69 177.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8e80de27-6772-4772-ab2f-6a93f989f1df")
+	)
+	(wire
+		(pts
 			(xy 449.58 271.78) (xy 449.58 274.32)
 		)
 		(stroke
@@ -10242,6 +10398,16 @@
 			(type default)
 		)
 		(uuid "8f95be25-da13-49a4-9348-1ed7c8dbe532")
+	)
+	(wire
+		(pts
+			(xy 163.83 22.86) (xy 167.64 22.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "909b5156-5396-4f98-9d31-69572f3725c3")
 	)
 	(wire
 		(pts
@@ -10495,6 +10661,16 @@
 	)
 	(wire
 		(pts
+			(xy 167.64 22.86) (xy 167.64 21.59)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9bb8e3ce-b9f9-40ef-8a1f-b74ebf250a99")
+	)
+	(wire
+		(pts
 			(xy 50.8 111.76) (xy 50.8 115.57)
 		)
 		(stroke
@@ -10532,16 +10708,6 @@
 			(type default)
 		)
 		(uuid "9da374a3-2102-47d0-92d2-9f986cdffe85")
-	)
-	(wire
-		(pts
-			(xy 163.83 24.13) (xy 167.64 24.13)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9f179ded-0802-4204-9bdd-57687b76d3c5")
 	)
 	(wire
 		(pts
@@ -10672,6 +10838,16 @@
 			(type default)
 		)
 		(uuid "a797b711-f7ef-4ca3-bcb4-f4b4d7b8343b")
+	)
+	(wire
+		(pts
+			(xy 35.56 140.97) (xy 36.83 140.97)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a7a28427-da76-4e1c-b779-7d3d0a6b46fd")
 	)
 	(wire
 		(pts
@@ -11012,6 +11188,26 @@
 			(type default)
 		)
 		(uuid "be3b5b3a-8a08-4eaa-b215-373ba30db8a2")
+	)
+	(wire
+		(pts
+			(xy 35.56 133.35) (xy 35.56 135.89)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "beb3377a-de43-4399-9444-10c24d8835e0")
+	)
+	(wire
+		(pts
+			(xy 34.29 138.43) (xy 36.83 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c01e1088-64bb-4eee-8ecf-4ebe5e5311bd")
 	)
 	(wire
 		(pts
@@ -11895,6 +12091,16 @@
 	)
 	(wire
 		(pts
+			(xy 438.15 176.53) (xy 438.15 177.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f834e941-47ad-4904-9323-e44a9781d393")
+	)
+	(wire
+		(pts
 			(xy 438.15 281.94) (xy 438.15 284.48)
 		)
 		(stroke
@@ -11915,7 +12121,7 @@
 	)
 	(wire
 		(pts
-			(xy 440.69 176.53) (xy 440.69 179.07)
+			(xy 440.69 176.53) (xy 440.69 177.8)
 		)
 		(stroke
 			(width 0)
@@ -11972,6 +12178,16 @@
 			(type default)
 		)
 		(uuid "fda1043a-d4cf-4511-8a5f-7bfe6a4478f0")
+	)
+	(wire
+		(pts
+			(xy 166.37 33.02) (xy 166.37 29.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fdba6fa2-649a-443c-b6c3-39c077918036")
 	)
 	(wire
 		(pts
@@ -12149,6 +12365,28 @@
 		)
 		(uuid "b1bd6806-7f29-42ad-a491-7a2c8b5a00a2")
 	)
+	(label "usb_P"
+		(at 448.31 166.37 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "89d102b5-03d4-49aa-8788-8715a9216d58")
+	)
+	(label "usb_N"
+		(at 448.31 168.91 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "dd3590bb-9c37-47e0-82ca-79ed72b50da6")
+	)
 	(global_label "BOOT0"
 		(shape input)
 		(at 359.41 240.03 180)
@@ -12299,6 +12537,28 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "HT_Power"
+		(shape output)
+		(at 34.29 138.43 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "448d3a72-b1b5-44f3-acc3-36d7e9fa3b31")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 22.4148 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 				(hide yes)
 			)
 		)
@@ -14430,6 +14690,72 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+5V")
+		(at 35.56 133.35 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "16f790b0-5bee-484b-aeb9-7c392654dd7c")
+		(property "Reference" "#PWR073"
+			(at 35.56 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 35.56 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 35.56 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 35.56 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 35.56 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "38a3a0b6-d765-43b6-9744-b1c8f44e68a4")
+		)
+		(instances
+			(project "ScintillatorProbeHardware"
+				(path "/b577c016-7a5f-4050-822e-6f81bc7c5cda"
+					(reference "#PWR073")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Connector_Generic:Conn_01x03")
 		(at 441.96 208.28 0)
 		(unit 1)
@@ -15001,6 +15327,71 @@
 			(project "ScintillatorProbeHardware"
 				(path "/b577c016-7a5f-4050-822e-6f81bc7c5cda"
 					(reference "R10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x01")
+		(at 158.75 22.86 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "1e3f9594-4137-4647-a646-cf0372f5b1c6")
+		(property "Reference" "J9"
+			(at 158.75 19.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Conn_01x01"
+			(at 158.75 19.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical"
+			(at 158.75 22.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 158.75 22.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 158.75 22.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "0e67f936-2a1f-482e-af82-316c45eb5e35")
+		)
+		(instances
+			(project ""
+				(path "/b577c016-7a5f-4050-822e-6f81bc7c5cda"
+					(reference "J9")
 					(unit 1)
 				)
 			)
@@ -16558,76 +16949,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector_Generic:Conn_01x02")
-		(at 158.75 24.13 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "3a13646a-d570-4e1a-a807-bd730e58b960")
-		(property "Reference" "J6"
-			(at 156.21 24.1299 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "~"
-			(at 156.21 26.6699 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
-			(at 158.75 24.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 158.75 24.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 158.75 24.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "1945eb4f-227d-4292-9e92-8aeb132a74f0")
-		)
-		(pin "2"
-			(uuid "2d3bbe08-f4e3-46fd-8195-c07740df5ca4")
-		)
-		(instances
-			(project "ScintillatorProbeHardware"
-				(path "/b577c016-7a5f-4050-822e-6f81bc7c5cda"
-					(reference "J6")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:R")
 		(at 88.9 63.5 0)
 		(unit 1)
@@ -17993,6 +18314,79 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector_Generic:Conn_01x03")
+		(at 41.91 138.43 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "496d7e82-a702-4599-aedc-2083a42ec2af")
+		(property "Reference" "J8"
+			(at 44.45 137.1599 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Conn_01x03"
+			(at 44.45 139.6999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical"
+			(at 41.91 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 41.91 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 41.91 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "9d6fbb3f-0008-494e-8bd4-ecedefc4a801")
+		)
+		(pin "1"
+			(uuid "cfe605c9-b68f-429a-8a4b-4d4dfd0917f1")
+		)
+		(pin "3"
+			(uuid "80af26f4-cff9-4b64-ac8a-8a369b332d55")
+		)
+		(instances
+			(project "ScintillatorProbeHardware"
+				(path "/b577c016-7a5f-4050-822e-6f81bc7c5cda"
+					(reference "J8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 203.2 118.11 0)
 		(unit 1)
@@ -18662,6 +19056,71 @@
 			(project ""
 				(path "/b577c016-7a5f-4050-822e-6f81bc7c5cda"
 					(reference "C13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 35.56 143.51 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "51599209-0e6b-419a-a3e8-958ec13dc244")
+		(property "Reference" "#PWR074"
+			(at 35.56 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 35.56 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 35.56 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 35.56 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 35.56 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "fa995a5a-40ef-4b3f-b570-770ea8275049")
+		)
+		(instances
+			(project "ScintillatorProbeHardware"
+				(path "/b577c016-7a5f-4050-822e-6f81bc7c5cda"
+					(reference "#PWR074")
 					(unit 1)
 				)
 			)
@@ -20273,6 +20732,73 @@
 			(project "ScintillatorProbeHardware"
 				(path "/b577c016-7a5f-4050-822e-6f81bc7c5cda"
 					(reference "#PWR033")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 158.75 29.21 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "709fd56c-c16e-4969-bb01-88d9ab83b97e")
+		(property "Reference" "J6"
+			(at 158.496 32.258 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "~"
+			(at 158.75 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+			(at 158.75 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 158.75 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 158.75 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e68a8845-b9d0-482e-9a0d-8fedc52cf8db")
+		)
+		(pin "2"
+			(uuid "06d7f22f-7761-4dd5-b825-feba23ea09ae")
+		)
+		(instances
+			(project "ScintillatorProbeHardware"
+				(path "/b577c016-7a5f-4050-822e-6f81bc7c5cda"
+					(reference "J6")
 					(unit 1)
 				)
 			)
@@ -22152,6 +22678,72 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GNDA")
+		(at 166.37 33.02 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9d77f3d2-2bbf-4ebb-82af-ae6fe4e1cf00")
+		(property "Reference" "#PWR075"
+			(at 166.37 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GNDA"
+			(at 166.37 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 166.37 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 166.37 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GNDA\" , analog ground"
+			(at 166.37 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "306bd154-3069-4a68-a2ab-e09347bec01d")
+		)
+		(instances
+			(project "ScintillatorProbeHardware"
+				(path "/b577c016-7a5f-4050-822e-6f81bc7c5cda"
+					(reference "#PWR075")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 90.17 135.89 0)
 		(unit 1)
@@ -23752,7 +24344,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "CustomParts:Amphenol_USB_B"
 			(at 444.5 167.64 0)
 			(effects
 				(font
@@ -23771,6 +24363,15 @@
 			)
 		)
 		(property "Description" "USB Type B connector"
+			(at 440.69 166.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "TME" "https://www.tme.eu/cz/details/tueb4f2d0b/konektory-usb-a-ieee1394/amphenol-communications-solutions/"
 			(at 440.69 166.37 0)
 			(effects
 				(font
