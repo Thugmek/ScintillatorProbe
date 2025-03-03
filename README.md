@@ -1,4 +1,4 @@
-# Scintilator Gamma Detector
+# Scintillator Gamma Detector
 
 ## License
 
