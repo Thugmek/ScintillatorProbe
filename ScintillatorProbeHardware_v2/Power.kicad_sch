@@ -1,0 +1,41 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "eb6b96d5-81d2-4348-9ee2-eafb9fe96746")
+	(paper "A4")
+	(lib_symbols)
+	(hierarchical_label "3V3"
+		(shape output)
+		(at 105.41 63.5 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "a94406a7-7266-4325-97cd-cce0f0040768")
+	)
+	(hierarchical_label "USB_5V"
+		(shape input)
+		(at 62.23 63.5 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "ce410b01-73fc-4937-8fb9-dff21db1afe0")
+	)
+	(hierarchical_label "12V"
+		(shape output)
+		(at 105.41 71.12 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "d51aee3b-d64a-4799-9f38-767880008b9b")
+	)
+)
