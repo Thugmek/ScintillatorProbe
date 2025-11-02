@@ -101,6 +101,46 @@
 				(justify left top)
 			)
 		)
+		(pin "Power" input
+			(at 116.84 102.87 180)
+			(uuid "99bfeac3-a5ad-4a20-aca4-21d86e7be1f7")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "Drive_Pulse" input
+			(at 116.84 105.41 180)
+			(uuid "c0113ca6-865e-498a-a3ff-2ab91ededae5")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "Sense" output
+			(at 116.84 107.95 180)
+			(uuid "e97172d4-43ea-449e-b268-e66898491ef3")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "HT" output
+			(at 137.16 104.14 0)
+			(uuid "c4825b32-1176-4919-be00-41c889e47237")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
 		(instances
 			(project "ScintillatorProbeHardware_v2"
 				(path "/736f2e97-1393-4b3c-b920-d97e4221d830"
@@ -163,16 +203,6 @@
 				(justify right)
 			)
 		)
-		(pin "USB_5V" output
-			(at 91.44 83.82 0)
-			(uuid "bd49fe61-a852-41c4-8e6d-f6b26f7ff929")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
 		(instances
 			(project "ScintillatorProbeHardware_v2"
 				(path "/736f2e97-1393-4b3c-b920-d97e4221d830"
@@ -215,40 +245,52 @@
 				(justify left top)
 			)
 		)
-		(pin "USB_5V" input
-			(at 91.44 99.06 0)
-			(uuid "3aeb62e0-d8bb-4a28-aaaf-8c6fc8c0c471")
-			(effects
-				(font
-					(size 1.27 1.27)
+		(instances
+			(project "ScintillatorProbeHardware_v2"
+				(path "/736f2e97-1393-4b3c-b920-d97e4221d830"
+					(page "4")
 				)
-				(justify right)
 			)
 		)
-		(pin "12V" output
-			(at 91.44 102.87 0)
-			(uuid "8505b58d-3687-4725-8a51-35fa23c5a6d8")
+	)
+	(sheet
+		(at 151.13 66.04)
+		(size 21.59 21.59)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "e0a0d394-1e3a-4679-bda2-bc0be93f94b9")
+		(property "Sheetname" "Peak_Detector"
+			(at 151.13 65.3284 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left bottom)
 			)
 		)
-		(pin "3V3" output
-			(at 91.44 106.68 0)
-			(uuid "15524659-db4e-4046-8063-4a39b08a6bf8")
+		(property "Sheetfile" "Peak_Detector.kicad_sch"
+			(at 151.13 88.2146 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left top)
 			)
 		)
 		(instances
 			(project "ScintillatorProbeHardware_v2"
 				(path "/736f2e97-1393-4b3c-b920-d97e4221d830"
-					(page "4")
+					(page "6")
 				)
 			)
 		)

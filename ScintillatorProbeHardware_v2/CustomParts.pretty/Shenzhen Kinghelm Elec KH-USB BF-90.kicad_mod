@@ -1,0 +1,141 @@
+(footprint "Shenzhen Kinghelm Elec KH-USB BF-90"
+	(version 20240108)
+	(generator "pcbnew")
+	(generator_version "8.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at 0 10 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "5c4c5e88-d1f6-4316-bae4-ffa6ff06b6c0")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+		)
+	)
+	(property "Value" "Shenzhen Kinghelm Elec KH-USB BF-90"
+		(at 0 13.5 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "bc04ffb0-7ccb-4fe8-9163-9c3c4c78227c")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Footprint" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "1a82f168-5cb2-47b6-8306-30cda7dbee00")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "5fa0bad3-2f87-4c1e-a3bf-3303c62addc3")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "a50ba683-077b-4188-9599-b33b60a5f909")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(fp_rect
+		(start -6.075 -8.15)
+		(end 6.075 8.15)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill none)
+		(layer "User.1")
+		(uuid "6524e5e7-00fb-451a-91b3-325f77f7a9bc")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 11.5 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "5a952bbc-b69d-48c7-b68b-8c8665a25442")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" thru_hole circle
+		(at -1.25 7.21)
+		(size 1.6 1.6)
+		(drill 0.92)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "5661febd-7479-4311-bdba-d788b7d5296b")
+	)
+	(pad "2" thru_hole circle
+		(at -1.25 5.21)
+		(size 1.6 1.6)
+		(drill 0.92)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "d100b6f6-8081-488f-99f0-76cf4a5dd4e2")
+	)
+	(pad "3" thru_hole circle
+		(at 1.25 5.21)
+		(size 1.6 1.6)
+		(drill 0.92)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "11339460-83bc-45b6-85a2-289511398fc3")
+	)
+	(pad "4" thru_hole circle
+		(at 1.25 7.21)
+		(size 1.6 1.6)
+		(drill 0.92)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "cfec83da-b710-49e8-91fe-49851ff7e18d")
+	)
+	(pad "5" thru_hole circle
+		(at -6.02 2.5)
+		(size 3.2 3.2)
+		(drill 2.3)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "6c3f7b4f-58ad-4072-aa50-0caa4fb91bb0")
+	)
+	(pad "5" thru_hole circle
+		(at 6.02 2.5)
+		(size 3.2 3.2)
+		(drill 2.3)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "42f4638d-f810-4a2c-a43a-a558268b4da4")
+	)
+)

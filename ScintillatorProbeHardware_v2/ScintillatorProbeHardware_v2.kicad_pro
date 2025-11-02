@@ -279,6 +279,9 @@
     },
     "net_colors": null,
     "netclass_assignments": {
+      "/HT_Source/HT": [
+        "HT"
+      ],
       "HT": [
         "HT"
       ]
@@ -432,6 +435,10 @@
     [
       "199178b9-d4a0-48c4-ba5b-e8ae740bd759",
       "HT_Source"
+    ],
+    [
+      "e0a0d394-1e3a-4679-bda2-bc0be93f94b9",
+      "Peak_Detector"
     ]
   ],
   "text_variables": {}
